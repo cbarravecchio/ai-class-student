@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Memory suggestion review lifecycle</title>
+  <desc id="desc">A message creates a candidate claim linked to its source. Candidates are not recalled as confirmed memories until a person reviews and confirms them. Confirmed memories can be searched and connected. Replacements supersede older claims; possible conflicts are reviewed.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffbeb"/>
+      <stop offset="1" stop-color="#fff7ed"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#451a03" flood-opacity=".10"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#78716c"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; fill: #1c1917; }
+      .muted { fill: #57534e; font-size: 15px; }
+      .tag { font-size: 13px; font-weight: 750; letter-spacing: .8px; }
+      .card { filter: url(#shadow); }
+      .arrow { fill: none; stroke: #78716c; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="480" rx="28" fill="url(#bg)"/>
+  <text x="52" y="57" font-size="27" font-weight="750">A memory is reviewed before it becomes recallable</text>
+  <text x="52" y="85" class="muted">The claim stays connected to the original message so you can check its source.</text>
+
+  <g class="card">
+    <rect x="52" y="150" width="250" height="166" rx="18" fill="#fff" stroke="#fed7aa"/>
+    <rect x="76" y="173" width="44" height="37" rx="9" fill="#ffedd5"/>
+    <path d="M86 184h24M86 192h20M86 200h14" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+    <text x="134" y="197" class="tag" fill="#c2410c">SOURCE MESSAGE</text>
+    <text x="76" y="247" font-size="18" font-weight="700">“I adopted a dog</text>
+    <text x="76" y="273" font-size="18" font-weight="700">named Comet.”</text>
+    <text x="76" y="298" class="muted">Conversation · message 1</text>
+  </g>
+
+  <path d="M302 233 H355" class="arrow"/>
+
+  <g class="card">
+    <rect x="370" y="150" width="266" height="166" rx="18" fill="#fff" stroke="#fcd34d"/>
+    <rect x="394" y="173" width="44" height="37" rx="9" fill="#fef3c7"/>
+    <path d="M405 182h22M405 190h18M405 198h13" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+    <text x="452" y="197" class="tag" fill="#a16207">SUGGESTED CLAIM</text>
+    <text x="394" y="247" font-size="17" font-weight="700">“The user’s dog</text>
+    <text x="394" y="271" font-size="17" font-weight="700">is named Comet.”</text>
+    <rect x="394" y="285" width="112" height="20" rx="10" fill="#fef3c7"/>
+    <text x="406" y="299" font-size="11" font-weight="750" fill="#a16207">CANDIDATE</text>
+  </g>
+
+  <path d="M636 233 H688" class="arrow"/>
+
+  <g class="card">
+    <rect x="703" y="150" width="220" height="166" rx="18" fill="#fff" stroke="#a7f3d0"/>
+    <circle cx="813" cy="192" r="24" fill="#d1fae5"/>
+    <path d="M801 192l8 8 17-18" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="743" y="243" class="tag" fill="#047857">YOU REVIEW</text>
+    <text x="737" y="271" font-size="17" font-weight="700">Confirm or edit</text>
+    <text x="738" y="296" class="muted">Check the source first</text>
+  </g>
+
+  <path d="M923 233 H976" class="arrow"/>
+
+  <g class="card">
+    <rect x="991" y="150" width="157" height="166" rx="18" fill="#ecfdf5" stroke="#6ee7b7"/>
+    <circle cx="1069" cy="192" r="24" fill="#a7f3d0"/>
+    <path d="M1057 192l8 8 17-18" fill="none" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1018" y="243" class="tag" fill="#047857">CONFIRMED</text>
+    <text x="1019" y="272" font-size="17" font-weight="700">Searchable</text>
+    <text x="1019" y="297" class="muted">Source linked</text>
+  </g>
+
+  <path d="M813 316 V357 H440" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+  <rect x="52" y="360" width="405" height="120" rx="15" fill="#fff" stroke="#fde68a"/>
+  <circle cx="82" cy="393" r="15" fill="#fef3c7"/>
+  <path d="M82 383v11l8 5" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="109" y="389" font-size="16" font-weight="750">Not confirmed yet?</text>
+  <text x="109" y="416" class="muted">It stays a suggestion until you</text>
+  <text x="109" y="438" class="muted">confirm it as a memory.</text>
+
+  <rect x="486" y="360" width="662" height="120" rx="15" fill="#fff" stroke="#cbd5e1"/>
+  <text x="510" y="389" font-size="16" font-weight="750">When facts change</text>
+  <text x="510" y="416" class="muted">A confirmed replacement can supersede an older claim.</text>
+  <text x="510" y="438" class="muted">Other suspected conflicts are flagged for your review.</text>
+</svg>

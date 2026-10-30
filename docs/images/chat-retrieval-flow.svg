@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">How a message flows through chat and memory retrieval</title>
+  <desc id="desc">The user asks about Comet. The chat app searches SQLite using keywords and semantic vectors, retrieves a cited source, sends context to the AI gateway, then saves the answer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1e293b" flood-opacity=".10"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; fill: #0f172a; }
+      .small { font-size: 15px; fill: #475569; }
+      .label { font-size: 14px; font-weight: 700; letter-spacing: 1.2px; fill: #64748b; }
+      .card { filter: url(#shadow); }
+      .line { fill: none; stroke: #64748b; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+  <text x="54" y="58" font-size="27" font-weight="750">From your question to a grounded answer</text>
+  <text x="54" y="86" class="small">Past-chat search runs locally; only the selected context is sent with the prompt to the AI gateway.</text>
+
+  <g class="card">
+    <rect x="54" y="135" width="250" height="134" rx="18" fill="#fff" stroke="#dbeafe"/>
+    <circle cx="86" cy="169" r="16" fill="#dbeafe"/>
+    <path d="M78 169h16M86 161v16" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="112" y="174" class="label">YOUR QUESTION</text>
+    <text x="78" y="213" font-size="20" font-weight="700">“What is my</text>
+    <text x="78" y="239" font-size="20" font-weight="700">dog’s name?”</text>
+  </g>
+
+  <path d="M304 202 H350" class="line"/>
+
+  <g class="card">
+    <rect x="365" y="135" width="245" height="134" rx="18" fill="#fff" stroke="#c7d2fe"/>
+    <rect x="389" y="153" width="36" height="30" rx="7" fill="#e0e7ff"/>
+    <path d="M397 163h20M397 170h15" stroke="#4f46e5" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="438" y="174" class="label">MASTER MEMORY</text>
+    <text x="389" y="215" font-size="19" font-weight="700">Searches saved</text>
+    <text x="389" y="241" font-size="19" font-weight="700">messages + claims</text>
+  </g>
+
+  <path d="M488 269 V310 H405 V337" class="line"/>
+  <path d="M488 310 H568 V337" class="line"/>
+
+  <g class="card">
+    <rect x="310" y="350" width="205" height="112" rx="16" fill="#fff" stroke="#bfdbfe"/>
+    <rect x="334" y="370" width="30" height="30" rx="8" fill="#dbeafe"/>
+    <path d="M340 384h18M349 375v18" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+    <text x="376" y="390" font-size="16" font-weight="700">Keyword search</text>
+    <text x="334" y="426" class="small">Exact names and terms</text>
+    <text x="334" y="447" class="small">SQLite FTS5</text>
+  </g>
+  <g class="card">
+    <rect x="530" y="350" width="205" height="112" rx="16" fill="#fff" stroke="#c4b5fd"/>
+    <circle cx="557" cy="384" r="15" fill="#ede9fe"/>
+    <circle cx="552" cy="380" r="3" fill="#7c3aed"/>
+    <circle cx="563" cy="378" r="3" fill="#7c3aed"/>
+    <circle cx="560" cy="390" r="3" fill="#7c3aed"/>
+    <path d="M554 381l7-2M554 382l5 7M562 381l-2 7" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="581" y="390" font-size="16" font-weight="700">Meaning search</text>
+    <text x="554" y="426" class="small">Related wording</text>
+    <text x="554" y="447" class="small">Local embeddings</text>
+  </g>
+
+  <path d="M515 406 H772" class="line"/>
+  <path d="M735 406 H772" class="line"/>
+  <g class="card">
+    <rect x="785" y="350" width="188" height="112" rx="16" fill="#fff" stroke="#bbf7d0"/>
+    <circle cx="815" cy="381" r="16" fill="#dcfce7"/>
+    <path d="M808 381l5 5 10-11" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="841" y="387" class="label">EVIDENCE</text>
+    <text x="809" y="424" font-size="16" font-weight="700">“Dog named</text>
+    <text x="809" y="446" font-size="16" font-weight="700">Comet” [M1]</text>
+  </g>
+  <path d="M973 406 H1010 V269" class="line"/>
+
+  <g class="card">
+    <rect x="1016" y="135" width="140" height="134" rx="18" fill="url(#blue)"/>
+    <circle cx="1086" cy="172" r="18" fill="#fff" fill-opacity=".18"/>
+    <path d="M1078 172h16M1086 164v16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="1038" y="211" font-size="16" font-weight="700" fill="#fff">AI gateway</text>
+    <text x="1037" y="237" font-size="14" fill="#e0e7ff">answer + tokens</text>
+  </g>
+  <path d="M610 202 H1016" class="line"/>
+  <text x="752" y="187" class="small">question + current chat + evidence</text>
+  <text x="785" y="495" class="small">The answer is saved to SQLite with the conversation.</text>
+</svg>
